@@ -37,7 +37,9 @@ A collection of customizable Gutenberg blocks for WordPress, designed to enhance
 
 ## License
 
-MIT
+MIT License
+
+Copyright (c) 2025 Birol YILMAZ
 
 ---
 
