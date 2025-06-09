@@ -1,7 +1,7 @@
 {
     "name": "yearmfew-blocks",
     "version": "1.0.0",
-    "description": "Custom Gutenberg blocks",
+    "description": "A collection of customizable Gutenberg blocks for WordPress, featuring dynamic content display and advanced sharing options.",
     "scripts": {
         "build": "wp-scripts build",
         "start": "wp-scripts start",
