@@ -14,9 +14,13 @@
         "title": {
             "type": "string",
             "default": ""
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
         }
     },
     "textdomain": "yearmfew-blocks",
-    "editorScript": "file:../../build/index.js",
+    "editorScript": "file:./build/index.js",
     "style": "file:./style.css"
 }
