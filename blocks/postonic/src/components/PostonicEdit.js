@@ -65,20 +65,20 @@ export const PostonicEdit = ({ attributes, setAttributes }) => {
         return mediaMap;
     }, [posts]);
 
-    // Metni kısalt ama HTML formatlamasını koru
+    // Shorten the text but preserve HTML formatting
     const truncateExcerpt = (html) => {
         if (!html) return '';
 
-        // Geçici div oluştur
+        // Create a temporary div
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
 
-        // Metni al
+        // Get the text
         let text = tempDiv.textContent || tempDiv.innerText || '';
 
-        // 150 karakterden uzunsa kısalt
+        // If longer than 150 characters, shorten
         if (text.length > 150) {
-            // HTML yapısını koru
+            // Preserve HTML structure
             const truncatedText = text.substring(0, 150) + '...';
             tempDiv.textContent = truncatedText;
             return tempDiv.innerHTML;
@@ -241,13 +241,13 @@ export const PostonicEdit = ({ attributes, setAttributes }) => {
                                         </a>
                                     </h3>
                                 )}
-                                {showContent && (
-                                    <div className="postonic-excerpt">
+                                <div className="postonic-excerpt">
+                                    {showContent && (
                                         <RawHTML>
                                             {truncateExcerpt(post.excerpt.rendered)}
                                         </RawHTML>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                                 <div className="postonic-meta">
                                     {showAuthor && (
                                         <span className="postonic-author">
@@ -269,7 +269,7 @@ export const PostonicEdit = ({ attributes, setAttributes }) => {
                         );
                     })}
                 </div>
-            </div>
+            </div >
         </>
     );
-}; 
+};
