@@ -1,0 +1,16 @@
+{
+    "name": "yearmfew-blocks",
+    "version": "1.0.0",
+    "description": "A collection of customizable Gutenberg blocks for WordPress, featuring dynamic content display and advanced sharing options.",
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start",
+        "build:postonic": "wp-scripts build blocks/postonic/src/index.js --output-path=blocks/postonic/build",
+        "start:postonic": "wp-scripts start blocks/postonic/src/index.js --output-path=blocks/postonic/build",
+        "yearmfew-build": "node yearmfew-build.js",
+        "yearmfew-start": "node yearmfew-start.js"
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^26.19.0"
+    }
+}

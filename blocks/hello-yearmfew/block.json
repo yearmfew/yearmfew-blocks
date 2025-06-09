@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "yearmfew-blocks/hello-yearmfew",
+    "version": "1.0.0",
+    "title": "Add your title here",
+    "category": "yearmfew-blocks",
+    "icon": "heading",
+    "description": "Use it to add a title",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "textdomain": "yearmfew-blocks",
+    "editorScript": "file:./build/index.js",
+    "style": "file:./style.css"
+}
