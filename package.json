@@ -1,0 +1,14 @@
+{
+    "name": "yearmfew-blocks",
+    "version": "1.0.0",
+    "description": "Custom Gutenberg blocks",
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start",
+        "build:postonic": "wp-scripts build blocks/postonic/src/index.js --output-path=blocks/postonic/build",
+        "start:postonic": "wp-scripts start blocks/postonic/src/index.js --output-path=blocks/postonic/build"
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^26.19.0"
+    }
+}
