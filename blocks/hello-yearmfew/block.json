@@ -21,5 +21,7 @@
         }
     },
     "textdomain": "yearmfew-blocks",
-    "editorScript": "file:../../build/hello-yearmfew/index.js"
+    "editorScript": "file:../../build/hello-yearmfew/index.js",
+    "editorStyle": "file:../../build/hello-yearmfew/style-index.css",
+    "style": "file:../../build/hello-yearmfew/style-index.css"
 }

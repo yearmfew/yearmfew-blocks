@@ -12,8 +12,8 @@
     },
     "textdomain": "yearmfew-blocks",
     "editorScript": "file:../../build/postonic/index.js",
-    "editorStyle": "file:../../build/postonic/index.css",
-    "style": "file:../../build/postonic/index.css",
+    "editorStyle": "file:../../build/postonic/style-index.css",
+    "style": "file:../../build/postonic/style-index.css",
     "viewScript": "file:../../build/postonic/view.js",
     "render": "file:./src/render.php",
     "attributes": {

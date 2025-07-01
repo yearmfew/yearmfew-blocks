@@ -21,9 +21,10 @@ A collection of customizable Gutenberg blocks for WordPress, designed to enhance
 
 1. Clone or download this repository into your WordPress `wp-content/plugins/yearmfew-blocks` directory.
 2. Run `npm install` to install dependencies.
-3. - `npm run yearmfew-build`: Builds all blocks in the project once. Use this to generate production-ready build files for every block automatically.
-4. - `npm run yearmfew-start`: Starts watch mode for all blocks. When you make changes to any block's source files, only that block will be rebuilt automatically. Useful for development and live preview.
-5. Activate the **yearmfew-blocks** plugin from your WordPress admin panel.
+3. Build the blocks:
+   - `npm run yearmfew-build`: Builds all blocks for production. All blocks are compiled into a single `build/` directory.
+   - `npm run yearmfew-start`: Starts watch mode for development. Automatically rebuilds when you make changes.
+4. Activate the **yearmfew-blocks** plugin from your WordPress admin panel.
 
 ## Usage
 
@@ -32,9 +33,10 @@ A collection of customizable Gutenberg blocks for WordPress, designed to enhance
 
 ## Development
 
-- Blocks are located in the `blocks/` directory.
-- Shared components and utilities can be placed in `src/components/`.
+- Blocks are located in the `blocks/` directory, each with their own `src/` folder.
+- All blocks are built into the central `build/` directory using WordPress's standard build tools.
 - SCSS files are used for styling and compiled during build.
+- Uses @wordpress/scripts for consistent, standard WordPress block development.
 
 ## License
 
