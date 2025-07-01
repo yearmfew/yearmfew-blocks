@@ -5,7 +5,10 @@ import { store as coreStore } from '@wordpress/core-data';
 import { __ } from '@wordpress/i18n';
 import { RawHTML } from '@wordpress/element';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const PostonicSliderEdit = ({ attributes, setAttributes }) => {
     const {
@@ -22,6 +25,19 @@ export const PostonicSliderEdit = ({ attributes, setAttributes }) => {
         showNavigation
     } = attributes;
     const blockProps = useBlockProps();
+
+    // Update functions
+    const updatePostsToShow = (newValue) => setAttributes({ postsToShow: newValue });
+    const updateCategory = (newValue) => setAttributes({ category: newValue });
+    const updatePostCount = (newValue) => setAttributes({ postCount: newValue });
+    const updateShowTitle = (newValue) => setAttributes({ showTitle: newValue });
+    const updateShowImage = (newValue) => setAttributes({ showImage: newValue });
+    const updateShowContent = (newValue) => setAttributes({ showContent: newValue });
+    const updateShowAuthor = (newValue) => setAttributes({ showAuthor: newValue });
+    const updateShowDate = (newValue) => setAttributes({ showDate: newValue });
+    const updateShowShare = (newValue) => setAttributes({ showShare: newValue });
+    const updateShowPagination = (newValue) => setAttributes({ showPagination: newValue });
+    const updateShowNavigation = (newValue) => setAttributes({ showNavigation: newValue });
 
     // Get categories
     const categories = useSelect((select) => {
@@ -235,53 +251,68 @@ export const PostonicSliderEdit = ({ attributes, setAttributes }) => {
                 </div>
 
                 <div className="postonic-slider-preview">
-                    <div className="postonic-slider-items-preview">
-                        {posts && Array.isArray(posts) && posts.map((post) => {
-                            if (!post || !post.id) return null;
-                            const media = featuredMedia[post.featured_media];
-                            return (
-                                <div key={post.id} className="postonic-slider-item-preview">
-                                    {showImage && media && (
-                                        <div className="postonic-slider-thumbnail">
-                                            <img
-                                                src={media.source_url}
-                                                alt={post.title?.rendered || ''}
-                                            />
+                    {posts && Array.isArray(posts) && posts.length > 0 ? (
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={3}
+                            navigation={showNavigation}
+                            pagination={showPagination ? { clickable: true } : false}
+                            modules={[Navigation, Pagination]}
+                            className="postonic-slider-editor"
+                        >
+                            {posts.map((post) => {
+                                if (!post || !post.id) return null;
+                                const media = featuredMedia[post.featured_media];
+                                return (
+                                    <SwiperSlide key={post.id}>
+                                        <div className="postonic-slider-item-preview">
+                                            {showImage && media && (
+                                                <div className="postonic-slider-thumbnail">
+                                                    <img
+                                                        src={media.source_url}
+                                                        alt={post.title?.rendered || ''}
+                                                    />
+                                                </div>
+                                            )}
+                                            {showTitle && (
+                                                <h3 className="postonic-slider-title">
+                                                    {post.title?.rendered || 'No title'}
+                                                </h3>
+                                            )}
+                                            <div className="postonic-slider-excerpt">
+                                                {showContent && post.excerpt?.rendered && (
+                                                    <RawHTML>
+                                                        {truncateExcerpt(post.excerpt.rendered)}
+                                                    </RawHTML>
+                                                )}
+                                            </div>
+                                            <div className="postonic-slider-meta">
+                                                {showAuthor && (
+                                                    <span className="postonic-slider-author">
+                                                        Author: {post.author || 'Unknown'}
+                                                    </span>
+                                                )}
+                                                {showDate && (
+                                                    <span className="postonic-slider-date">
+                                                        {post.date || 'No date'}
+                                                    </span>
+                                                )}
+                                                {showShare && (
+                                                    <button className="postonic-slider-share">
+                                                        {__('Paylaş', 'yearmfew-blocks')}
+                                                    </button>
+                                                )}
+                                            </div>
                                         </div>
-                                    )}
-                                    {showTitle && (
-                                        <h3 className="postonic-slider-title">
-                                            {post.title?.rendered || 'No title'}
-                                        </h3>
-                                    )}
-                                    <div className="postonic-slider-excerpt">
-                                        {showContent && post.excerpt?.rendered && (
-                                            <RawHTML>
-                                                {truncateExcerpt(post.excerpt.rendered)}
-                                            </RawHTML>
-                                        )}
-                                    </div>
-                                    <div className="postonic-slider-meta">
-                                        {showAuthor && (
-                                            <span className="postonic-slider-author">
-                                                Author: {post.author || 'Unknown'}
-                                            </span>
-                                        )}
-                                        {showDate && (
-                                            <span className="postonic-slider-date">
-                                                {post.date || 'No date'}
-                                            </span>
-                                        )}
-                                        {showShare && (
-                                            <button className="postonic-slider-share">
-                                                {__('Paylaş', 'yearmfew-blocks')}
-                                            </button>
-                                        )}
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
+                    ) : (
+                        <div className="postonic-slider-no-posts">
+                            {__('No posts found.', 'yearmfew-blocks')}
+                        </div>
+                    )}
                 </div>
             </div >
         </>

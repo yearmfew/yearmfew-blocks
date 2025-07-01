@@ -1,5 +1,6 @@
 @use "~swiper/css" as *;
-
+@use "~swiper/css/navigation" as *;
+@use "~swiper/css/pagination" as *;
 
 .wp-block-yearmfew-blocks-postonic-slider {
     .postonic-slider-category-selector {
@@ -13,6 +14,24 @@
                 margin-bottom: 1rem;
                 gap: 1rem;
             }
+        }
+    }
+
+    // Editor preview için Swiper stilleri
+    .postonic-slider-editor {
+        margin: 1rem 0;
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #0073aa;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #0073aa;
         }
     }
 
