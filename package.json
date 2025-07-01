@@ -3,14 +3,20 @@
     "version": "1.0.0",
     "description": "A collection of customizable Gutenberg blocks for WordPress, featuring dynamic content display and advanced sharing options.",
     "scripts": {
-        "build": "wp-scripts build",
-        "start": "wp-scripts start",
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch",
         "build:postonic": "wp-scripts build blocks/postonic/src/index.js --output-path=blocks/postonic/build",
         "start:postonic": "wp-scripts start blocks/postonic/src/index.js --output-path=blocks/postonic/build",
         "yearmfew-build": "node yearmfew-build.js",
         "yearmfew-start": "node yearmfew-start.js"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^26.19.0"
+        "@babel/core": "^7.27.4",
+        "@babel/preset-env": "^7.27.2",
+        "@babel/preset-react": "^7.27.1",
+        "@wordpress/scripts": "^27.9.0",
+        "babel-loader": "^10.0.0",
+        "webpack": "^5.99.9",
+        "webpack-cli": "^6.0.1"
     }
 }

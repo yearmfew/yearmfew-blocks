@@ -1,1 +1,1 @@
-import '../blocks/hello-yearmfew/src';
+// This file is no longer needed as each block is loaded separately

@@ -1,13 +1,9 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { HelloYearmfewEdit, HelloYearmfewSave } from './components/HelloYearmfew';
+import metadata from '../block.json';
 
-registerBlockType('yearmfew-blocks/hello-yearmfew', {
+registerBlockType(metadata.name, {
+    ...metadata,
     edit: HelloYearmfewEdit,
-    save: HelloYearmfewSave,
-    attributes: {
-        title: {
-            type: 'string',
-            default: ''
-        }
-    }
+    save: HelloYearmfewSave
 }); 

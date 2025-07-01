@@ -3,10 +3,10 @@
     "apiVersion": 2,
     "name": "yearmfew-blocks/hello-yearmfew",
     "version": "1.0.0",
-    "title": "Add your title here",
+    "title": "Hello Yearmfew",
     "category": "yearmfew-blocks",
     "icon": "heading",
-    "description": "Use it to add a title",
+    "description": "A simple hello world block",
     "supports": {
         "html": false
     },
@@ -21,6 +21,5 @@
         }
     },
     "textdomain": "yearmfew-blocks",
-    "editorScript": "file:./build/index.js",
-    "style": "file:./style.css"
+    "editorScript": "file:../../build/hello-yearmfew/index.js"
 }

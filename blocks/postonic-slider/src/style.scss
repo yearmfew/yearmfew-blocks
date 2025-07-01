@@ -1,0 +1,77 @@
+@use "~swiper/css" as *;
+
+
+.wp-block-yearmfew-blocks-postonic-slider {
+    .postonic-slider {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .postonic-slider-items {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .postonic-slider-item {
+        min-width: 300px;
+        max-width: 350px;
+        width: 100%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 1rem;
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .postonic-slider-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: inherit;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .postonic-slider-title {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .postonic-slider-content {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .postonic-slider-meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .postonic-slider-share {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #0073aa;
+        }
+    }
+
+
+
+    .postonic-slider-swiper {
+        .swiper {
+            width: 100%;
+            padding-bottom: 2rem;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: auto;
+        }
+    }
+}

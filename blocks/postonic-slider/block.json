@@ -1,20 +1,20 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "yearmfew-blocks/postonic",
+    "name": "yearmfew-blocks/postonic-slider",
     "version": "0.1.0",
-    "title": "Postonic",
+    "title": "Postonic Slider",
     "category": "yearmfew-blocks",
-    "icon": "megaphone",
-    "description": "Display posts in a grid layout with category filtering",
+    "icon": "slides",
+    "description": "Display posts in a slider layout with Swiper.js",
     "supports": {
         "html": false
     },
     "textdomain": "yearmfew-blocks",
-    "editorScript": "file:../../build/postonic/index.js",
-    "editorStyle": "file:../../build/postonic/index.css",
-    "style": "file:../../build/postonic/index.css",
-    "viewScript": "file:../../build/postonic/view.js",
+    "editorScript": "file:../../build/postonic-slider/index.js",
+    "editorStyle": "file:../../build/postonic-slider/index.css",
+    "style": "file:../../build/postonic-slider/view.css",
+    "viewScript": "file:../../build/postonic-slider/view.js",
     "render": "file:./src/render.php",
     "attributes": {
         "category": {
@@ -28,6 +28,10 @@
         "postCount": {
             "type": "string",
             "default": ""
+        },
+        "slidesPerView": {
+            "type": "number",
+            "default": 3
         },
         "showTitle": {
             "type": "boolean",
@@ -50,6 +54,14 @@
             "default": true
         },
         "showShare": {
+            "type": "boolean",
+            "default": true
+        },
+        "showPagination": {
+            "type": "boolean",
+            "default": true
+        },
+        "showNavigation": {
             "type": "boolean",
             "default": true
         }
